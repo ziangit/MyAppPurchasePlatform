@@ -1,25 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Dropdown, Menu, Button, message } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import React, { useEffect, useState } from "react";
+import LoginForm from "./components/LoginForm";
+import HomePage from "./components/HomePage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const { Header, Content } = Layout;
+
+const App = () => {
+  const [authed, setAuthed] = useState();
+
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+
+    if (query.get("success")){
+      message.success("Order placed");
+    }
+  },[]);
+
+  useEffect(() => {
+    const authToken = localStorage.getItem("authToken");
+    setAuthed(authToken !== null);
+  }, []);
+
+  const handleLoginSuccess = () => {
+    setAuthed(true);
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("authToken");
+    setAuthed(false);
+  };
+
+  const renderContent = () => {
+    
+    if (authed === undefined) {
+      return <></>;
+    }
+
+    if (!authed) {
+      return <LoginForm onLoginSuccess={handleLoginSuccess} />;
+    }
+
+    return <HomePage />;
+  };
+
+  const userMenu = (
+    <Menu>
+      <Menu.Item key="logout" onClick={handleLogOut}>
+        Log Out
+      </Menu.Item>
+    </Menu>
   );
-}
+
+  return (
+    <Layout style={{ height: "100vh" }}>
+      <Header style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ fontSize: 16, fontWeight: 600, color: "white" }}>
+          App Store
+        </div>
+        {authed && (
+          <div>
+            <Dropdown trigger="click" overlay={userMenu}>
+              <Button icon={<UserOutlined />} shape="circle" />
+            </Dropdown>
+          </div>
+        )}
+      </Header>
+      <Content
+        style={{ height: "calc(100% - 64px)", padding: 20, overflow: "auto" }}
+      >
+        {renderContent()}
+      </Content>
+    </Layout>
+  );
+};
 
 export default App;
