@@ -21,6 +21,21 @@ This application provides a user-friendly interface for a application purchase p
 ![login](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/da8aec47-e9e4-475d-af1c-b11579883f15)
 
 
+### Browse
+
+![browse](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/26844349-4cf6-4a4e-abee-40ad9dfbddb1)
+
+### Search
+
+![search](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/7274e311-eaf3-4ab4-8d14-ce0a5e707e0b)
+
+### Post
+
+![post](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/bf1cfabd-5b0d-4510-a480-bdb243eb0f93)
+
+### Purchase
+
+![purchase](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/7ea17599-df0d-4b22-bb41-db6b79cd306b)
 
 
 # Getting Started with Create React App
