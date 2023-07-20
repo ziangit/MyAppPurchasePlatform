@@ -15,6 +15,7 @@ This application provides a user-friendly interface for a application purchase p
 
 ### Login and Register
 
+
 ![register](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/af8e2e55-4512-4220-a77a-b9e08798b8c2)
 
 ![login](https://github.com/ziangit/MyAppPurchasePlatform/assets/110576506/da8aec47-e9e4-475d-af1c-b11579883f15)
