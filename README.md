@@ -1,3 +1,16 @@
+# MyAppPurchasePlatform
+
+This is a Cloud and React based application purchase platform. The platform supports features for users to browse, upload, search, and purchase
+products with token based authentication flow using JWT. 
+
+I implemented the microservices of register, login, logout, upload, and checkout by Go and deployed to Google App Engine. 
+I used ElasticSearch and Stripe API to provide search and checkout functions. Since the project is not finished yet, please don't pay or upload important products on this platform.
+
+Finally, the App is deployed using AWS Amplify.
+Check it out here: https://prod.d2qjqo6mj7zwjn.amplifyapp.com/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
